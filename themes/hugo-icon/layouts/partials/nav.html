@@ -1,0 +1,57 @@
+<div class="jos-sticky">
+  <div class="fh5co-main-nav">
+    <div class="container">
+      <div class="fh5co-menu-1">
+
+	<a href="#" data-nav-section="home">{{ with .Site.Params.nav }}{{ if isset . "logo" }}<img src={{ .logo | absURL }} height="20" alt="">{{ end }}{{ if (not (isset . "logo")) }}Inicio{{ end }}{{ end }}</a>
+
+	{{ if .Site.Params.services.enable }}
+	<a href="#" data-nav-section="services">{{ with .Site.Params.nav.services }}{{ . | markdownify }}{{ end }}</a>
+	{{ end }}
+
+	{{ if .Site.Params.mission.enable }}
+	<a href="#" data-nav-section="mission">{{ with .Site.Params.nav.mission }}{{ . | markdownify }}{{ end }}</a>
+	{{ end }}
+
+	{{ if .Site.Params.team.enable }}
+	<a href="#" data-nav-section="team">{{ with .Site.Params.nav.team }}{{ . | markdownify }}{{ end }}</a>
+	{{ end }}
+
+	{{ if .Site.Params.contact.enable }}
+	<a href="#" data-nav-section="contact">{{ with .Site.Params.nav.contact }}{{ . | markdownify }}{{ end }}</a>
+	{{ end }}
+	
+			</div>
+			{{ with .Site.Params.footer }}
+      <div class="col-md-4 mx-auto">
+	<ul class="fh5co-social">
+	  {{ if isset . "github" }}
+	  <li><a href="{{ .github }}"><i class="icon-github"></i></a></li>
+	  {{ end }}
+	  {{ if isset . "twitter" }}
+	  <li><a href="{{ .twitter }}"><i class="icon-twitter"></i></a></li>
+	  {{ end }}
+	  {{ if isset . "facebook" }}
+	  <li><a href="{{ .facebook }}"><i class="icon-facebook"></i></a></li>
+	  {{ end }}
+	  
+	  {{ if isset . "linkedin" }}
+	  <li><a href="{{ .linkedin }}"><i class="icon-linkedin"></i></a></li>
+	  {{ end }}
+	  {{ if isset . "instagram" }}
+	  <li><a href="{{ .instagram }}"><i class="icon-instagram"></i></a></li>
+	  {{ end }}
+	</ul>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<style>
+	@media screen and (max-width: 770px) {
+		.jos-sticky{
+			display: none;
+		}
+	}
+</style>

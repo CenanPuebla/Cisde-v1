@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans" rel="stylesheet">
+
+<style type="text/css">
+
+  .oferta .accordion .card {
+    border-radius: 6px !important;
+    border: 1px solid #eceded !important;
+    margin-bottom: 5px;
+  }
+
+  .oferta .accordion .card .card-header {
+    background: #f9fafa;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 0;
+    font-family: "Roboto", sans-serif;
+    border-radius: 6px 6px 0 0;
+    border-bottom: none;
+  }
+
+  .oferta .accordion .card-header:hover {
+    background: #ecf0f0;
+  }
+
+  .oferta .accordion .card-header h2 span {
+    float: left;
+    margin-top: 10px;
+  }
+
+  .oferta .accordion .card-header .btn {
+    color: #3659a2;
+    font-size: 2.04rem;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    top: -2px;
+    font-weight: 500;
+  }
+
+  .oferta .accordion .card-header i {
+    float: right;
+    font-size: 1.3rem;
+    font-weight: bold;
+    position: relative;
+    top: 5px;
+  }
+
+  .oferta .accordion .card-header .btn:hover {
+    color: #35589f;
+  }
+
+  .oferta .accordion .card-body {
+    color: #324353;
+    text-align: justify;
+    border-top: 1px solid #eceded;
+  }
+
+  .oferta .page-title {
+    text-align: center;
+    margin: 2rem 0;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+  }
+
+  .oferta .page-title::after {
+    content: "";
+    width: 100px;
+    position: absolute;
+    margin: 0 auto;
+    height: 4px;
+    border-radius: 1px;
+    background: #3659a2;
+    left: 0;
+    right: 0;
+    bottom: -15px;
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    // Add minus icon for collapse element which is open by default
+    $(".oferta .collapse.show").each(function () {
+      $(this).siblings(".card-header").find(".btn i").html("remove");
+      $(this).prev(".card-header").addClass("highlight");
+    });
+
+    // Toggle plus minus icon on show hide of collapse element
+    $(".oferta .collapse").on('show.bs.collapse', function () {
+      $(this).parent().find(".card-header .btn i").html("remove");
+    }).on('hide.bs.collapse', function () {
+      $(this).parent().find(".card-header .btn i").html("add");
+    });
+  });
+</script>
+
+<div class="oferta">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-title">Oferta Academica</h1>
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="clearfix mb-0">
+                    <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                      aria-controls="collapseOne">Doctorados <i class="material-icons">add</i></a>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body"><a href="https://administracion-y-gestion.cisde.ga/">Administración y Gestión Estratégica</a></div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                      aria-controls="collapseTwo"> Maestrias <i
+                        class="material-icons">add</i></a>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body"><a href="https://comunicacion-politica-marketing.cisde.ga/">Comunicación Política y Marketing</a></div>
+                  <div class="card-body"><a href="https://direccion-educativa-supervicion.cisde.ga/">Alta Dirección Educativa y Supervisión Escolar</a></div>
+                  <div class="card-body"><a href="https://politicas-publicas-gestion.cisde.ga/">Políticas Públicas y Gestión Estratégica</a></div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                      aria-expanded="false" aria-controls="collapseThree">Licenciaturas<i class="material-icons">add</i></a>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body"><a href="https://derecho.cisde.ga/">Derecho</a></div>
+                    <div class="card-body"><a href="https://administracion-negocios-internacionales.cisde.ga/">Administración y Negocios Internacionales</a></div>
+                    <div class="card-body"><a href="https://animacion-diseno-digital.cisde.ga/">Animación y Diseño Digital</a></div>
+                  
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                      aria-controls="collapseFour">Diplomados<i
+                        class="material-icons">add</i></a>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+                    ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                    laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                    assumenda shoreditch et.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

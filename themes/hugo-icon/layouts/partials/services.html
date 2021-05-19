@@ -1,0 +1,82 @@
+<div id="fh5co-services" data-section="services">
+  {{ with .Site.Params.services }}
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+      <h2>{{ .title | markdownify }}</h2>
+      <p>{{ .description | markdownify }}</p>
+    </div>
+    <div class="col-md-12  text-center ser-sli">
+    {{ range .item }}
+    <div class="col-md-5">
+      <a href="{{ .url }}">
+        <div class="service">
+          <div class="icon jail"><img class="iconImg" src="{{ .img }}" alt=""></i></div>
+          <h3>{{ .title  | markdownify }}</h3>
+          <p>{{ .description | markdownify }}</p>
+        </div>
+      </a>
+    </div>
+    {{ end }}
+    </div>
+    
+    <div class="col-md-12 text-center">
+      <p><a href="#" class="btn btn-primary btn-outline fh5co-content-nav" data-nav-section="contact">Contactanos</a></p>
+    </div>
+    
+  </div>
+  <!-- {{ if .video }}
+  <div class="fh5co-video"><a href="{{ with .vidlink }}{{ . }}{{ end }}" class="popup-vimeo"><i class="icon-play2"></i></a> <span>Ve nuestro video</span></div>
+  {{ end }} -->
+  {{ end }}
+</div> <!-- END fh5co-services -->
+
+
+<style>
+  .jail{
+    height: 15rem;
+    width: 35rem;
+    overflow: hidden;
+  }
+  .iconImg{
+    width: 100%;
+  }
+</style>
+
+<script>
+  $('.ser-sli').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+  });
+</script>

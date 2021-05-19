@@ -1,0 +1,533 @@
+# Main config file for icon theme.
+theme = "hugo-icon"
+baseURL = "https://www.cisde.ga/"
+languageCode = "en-AU"
+title = "Cisde"
+
+# Metadata
+[params]
+  author = "Your name"
+  description = "Cool description"
+  whatsappMessage = "Envianos un mensaje"
+
+# Hero section (from here on is for icon theme)
+[params.hero]
+  img = "cisde-panned.svg"
+  title = "Grupo interdiciplinario de visionarios, academicos y lideres "
+  description = "Formando nuevos estrategas de clase mundial."
+
+# Navigation section
+[params.nav]
+  mission = "Nosotros"
+  services = "Oferta academica"
+  team = "Nuestro equipo"
+  contact = "Contactanos"
+  # Include logo instead if HOME:
+  # logo = "/images/cisde.svg"
+
+# Mission section
+[params.mission]
+  enable = false
+
+  [params.mission.images]
+    enable = true
+
+    [[params.mission.images.list]]
+      img = "images/3.jpg"
+    [[params.mission.images.list]]
+      img = "images/2.jpg"
+    [[params.mission.images.list]]
+      img = "images/1.jpg"
+    [[params.mission.images.list]]
+      img = "images/4.jpg"
+
+  [[params.mission.item]]
+    weight = 1
+    name = "Mision"
+    title = "Mision"
+    subtitle = "¿Qué queremos?"
+    description = "Formar estrategas de clase mundial con el más alto nivel técnico en el ámbito público en sus distintas variables de actuación, generando la aceptación y confianza de la sociedad.<p><a href='#' class='btn btn-primary btn-outline fh5co-content-nav' data-nav-section='contact'>Contactanos</a></p>"
+
+  [[params.mission.item]]
+    weight = 2
+    name = "Vision"
+    title = "Vision"
+    subtitle = "¿A dondé vamos?"
+    description = "Ser una Institución vanguardista que proporcione las herramientas para la mejora de la administración pública y contribuya directamente en el beneficio de la sociedad.<p><a href='#' class='btn btn-primary btn-outline fh5co-content-nav' data-nav-section='contact'>Contactanos</a></p>"
+
+  [[params.mission.item]]
+    weight = 3
+    name = "Valores"
+    title = "Valores"
+    subtitle = "¿En qué creemos?"
+    description = "<p>Los valores que rigen el comportamiento de todos los colaboradores de CISDE son los siguientes:</p><ul class='checked'><li>excelencia: los estudios de posgrado, así como los productos y servicios que ofrece el CISDE, deben producirse de acuerdo a los más altos niveles de desempeño existente.</li><li>Oportunidad: el estudiante y el cliente del CISDE deben recibir los productos y servicios que solicitan en el plazo comprometido y, de ser posible, adelantarse a las expectativas que se tengan al respecto.</li><li>Prospectividad: todos los productos y servicios del CISDE deben producirse en términos de estudios e investigaciones de frontera, delineando el estándar. </li></ul><p><a href='#' class='btn btn-primary btn-outline fh5co-content-nav' data-nav-section='contact'>Contactanos</a></p>"
+
+# Services section
+[params.services]
+  enable = true
+  video = true
+  vidlink = "https://vimeo.com/channels/staffpicks/93951774"
+  title = "Oferta Academica"
+  description = "Descripcion breve de la oferta academica"
+
+  [[params.services.item]]
+    icon = "icon-present"
+    title = "Administración y Negocios Internacionales"
+    url = "https://administracion-negocios-internacionales.cisde.ga/"
+    img = "https://administracion-negocios-internacionales.cisde.ga/images/adne.jpg"
+    description = ""
+
+  [[params.services.item]]
+    icon = "icon-eye"
+    title = "Administración y Gestión Estratégica"
+    url = "https://administracion-y-gestion.cisde.ga/"
+    img = "https://administracion-y-gestion.cisde.ga/images/adge.jpg"
+    description = ""
+
+  [[params.services.item]]
+    icon = "icon-paper-plane"
+    title = "Animación y Diseño Digital"
+    url = "https://animacion-diseno-digital.cisde.ga/"
+    img = "https://animacion-diseno-digital.cisde.ga/images/andi.jpg"
+    description = ""
+
+  [[params.services.item]]
+    icon = "icon-pencil"
+    title = "Comunicación Política y Marketing"
+    url = "https://comunicacion-politica-marketing.cisde.ga/"
+    img = "https://comunicacion-politica-marketing.cisde.ga/images/poma.png"
+    description = ""
+
+  [[params.services.item]]
+    icon = "icon-rocket"
+    title = "Derecho"
+    url = "https://derecho.cisde.ga/"
+    img = "https://derecho.cisde.ga/images/dere.jpg"
+    description = "Descripcion breve de Cuotas"
+
+  [[params.services.item]]
+    icon = "icon-support"
+    title = "Alta Dirección Educativa y Supervisión Escolar"
+    url = "https://direccion-educativa-supervicion.cisde.ga/"
+    img = "https://direccion-educativa-supervicion.cisde.ga/images/edsu.png"
+    description = "Descripcion breve de Becas "
+
+  [[params.services.item]]
+    icon = "icon-support"
+    title = "Políticas Públicas y Gestión Estratégica"
+    url = "https://politicas-publicas-gestion.cisde.ga/"
+    img = "https://politicas-publicas-gestion.cisde.ga/images/puge.png"
+    description = "Descripcion breve de Becas "
+
+# Work section
+[params.work]
+  enable = true
+
+  [[params.work.item]]
+    title = "Consectetur adipisicing"
+    subtitle = "Web Design"
+    img = "images/a.jpg"
+
+  [[params.work.item]]
+    title = "Consectetur adipisicing"
+    subtitle = "Web Design"
+    img = "images/b.jpg"
+
+  [[params.work.item]]
+    title = "Consectetur adipisicing"
+    subtitle = "Web Design"
+    img = "images/c.jpg"
+
+  [[params.work.item]]
+    title = "Consectetur adipisicing"
+    subtitle = "Web Design"
+    img = "images/d.jpg"
+
+  [[params.work.item]]
+    title = "Consectetur adipisicing"
+    subtitle = "Web Design"
+    img = "images/e.jpg"
+
+  [[params.work.item]]
+    title = "Consectetur adipisicing"
+    subtitle = "Web Design"
+    img = "images/f.jpg"
+
+  [[params.work.item]]
+    title = "Consectetur adipisicing"
+    subtitle = "Web Design"
+    img = "images/g.jpg"
+
+  [[params.work.item]]
+    title = "Consectetur adipisicing"
+    subtitle = "Web Design"
+    img = "images/h.jpg"
+
+# Team section
+[params.team]
+  enable = true
+  title = "Plantel Laboral"
+  description = ""
+
+  [[params.team.item]]
+    name = "LUIS ENRIQUE SÁNCHEZ DÍAZ"
+    position = "DIRECTOR GENERAL - 2019"
+    description = ""
+    img = "images/luis.jpg"
+    email = "#"
+    telephone = "2224220622"
+    facebook = "#"
+    twitter = "#"
+    dribbble = "#"
+    instagram = "#"
+    github = "#"
+    linkedin = "#"
+    whatsapp = "#"
+
+  [[params.team.item]]
+    name = "CLAUDIA RIVERA HERNÁNDEZ"
+    position = "DIRECTORA ACADÉMICA - 2011"
+    description = "Materias <br>INVESTIGACIÓN DE LAS CIENCIAS SOCIALES"
+    img = "images/claudia.jpg"
+    email = "#"
+    telephone = "#"
+    facebook = "#"
+    twitter = "#"
+    dribbble = "#"
+    instagram = "#"
+    github = "#"
+    whatsapp = "#"
+
+  [[params.team.item]]
+    name = "RICARDO PAREDES SOLORIO"
+    position = "COORDINADOR DE INVESTIGACIÓN"
+    description = "Materias <br>CIBERPOLÍTICA <br>SEMINARIO DE ANÁLISIS ESTRATÉGICO"
+    img = "images/ricardo.jpg"
+    email = "#"
+    telephone = "2211510479"
+    facebook = "#"
+    twitter = "#"
+    dribbble = "#"
+    instagram = "#"
+    github = "#"
+    whatsapp = "#"
+
+   [[params.team.item]]
+     name = "YESICA GÓMEZ HERNÁNDEZ"
+     position = "JEFA DE LA OFICINA DE TITULACIÓN - 2015"
+     description = ""
+     img = "images/person3.jpg"
+     email = "#"
+     telephone = "2221284788"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+
+   [[params.team.item]]
+     name = "ALEJANDRA FABIOLA FLORES ZAMORA"
+     position = "COORDINADORA DE SERVICIOS ESCOLARES - 2018"
+     description = ""
+     img = "images/person3.jpg"
+     email = "#"
+     telephone = "#"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+
+   [[params.team.item]]
+     name = "JORGE DAVID CORTÉS MORENO"
+     position = "DOCENTE - 2011"
+     description = "Materias <br>MICRO Y MACROECONOMÍA <br>DERECHO ELECTORAL <br>SEMINARIO DE INVESTIGACIÓN I"
+     img = "images/jorge.jpg"
+     email = "#"
+     telephone = "2222171146"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+
+   [[params.team.item]]
+     name = "OBED MEZA ROMERO"
+     position = "DOCENTE - 2015"
+     description = "Materias <br>FINANZAS PÚBLICAS <br>SISTEMA POLÍTICO MEXICANO"
+     img = "images/person3.jpg"
+     email = "#"
+     telephone = "2223109084"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+    
+   [[params.team.item]]
+     name = "MARÍA DE LOURDES SÁNCHEZ GÓMEZ"
+     position = "DOCENTE - 2019"
+     description = "Materias <br>SEMINARIO ESTUDIOS DE GOBIERNO I"
+     img = "images/person3.jpg"
+     email = "#"
+     telephone = "2461048172"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+    
+   [[params.team.item]]
+     name = "MELVA NAVARRO SEQUEIRA"
+     position = "DOCENTE - 2015"
+     description = "Materias <br>POLÍTICAS PÚBLIAS II <br>SEMINARIO ESTUDIOS DE GOBIERNO II"
+     img = "images/person3.jpg"
+     email = "#"
+     telephone = "2223247803"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+
+   [[params.team.item]]
+     name = "VALENTINA CAMPOS CABRAL"
+     position = "DOCENTE - 2015"
+     description = "Materias <br>SISTEMA POLÍTICO MEXICANO <br>ELABORACIÓN DE POLÍTICAS PÚBLICAS"
+     img = "images/person3.jpg"
+     email = "#"
+     telephone = "#"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+
+   [[params.team.item]]
+     name = "ISSIS LUZ MARÍA JUÁREZ"
+     position = "DOCENTE - 2018"
+     description = "Materias <br>ANÁLISIS DE POLÍTICAS PÚBLICAS <br>SISTEMAS DEMOCRÁTICOS Y ESTADO DE LA DEMOCRACIA"
+     img = "images/person3.jpg"
+     email = "#"
+     telephone = "2221068404"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+
+   [[params.team.item]]
+     name = "JOSÉ OJEDA BUSTAMANTE"
+     position = "DOCENTE - 2016"
+     description = "Materias <br>MERCADOTENCIA Y LAS RELACIONES CON LOS MEDIOS TELEVISIVOS EN LAS CAMPAÑAS POLÍTICAS"
+     img = "images/person3.jpg"
+     email = "#"
+     telephone = "2225647521"
+     facebook = "#"
+     twitter = "#"
+     dribbble = "#"
+     instagram = "#"
+     github = "#"
+     whatsapp = "#"
+
+  #  [[params.team.item]]
+  #    name = "BENJAMÍN DIMAS CHÁVEZ"
+  #    position = "DOCENTE - 2016"
+  #    description = "Materias <br>POLÍTICAS PÚBLICAS I <br>EVALUACIÓN DE POLÍTICAS PÚBLICAS"
+  #    img = "images/person3.jpg"
+  #    email = "#"
+  #    telephone = "#"
+  #    facebook = "#"
+  #    twitter = "#"
+  #    dribbble = "#"
+  #    instagram = "#"
+  #    github = "#"
+  #    whatsapp = "#"
+
+  #  [[params.team.item]]
+  #    name = "ALEJANDRA FABIOLA FLORES ZAMORA"
+  #    position = "COORDINADORA DE SERVICIOS ESCOLARES - 2018"
+  #    description = ""
+  #    img = "images/person3.jpg"
+  #    email = "#"
+  #    telephone = "#"
+  #    facebook = "#"
+  #    twitter = "#"
+  #    dribbble = "#"
+  #    instagram = "#"
+  #    github = "#"
+  #    whatsapp = "#"
+
+  #  [[params.team.item]]
+  #    name = "ALEJANDRA FABIOLA FLORES ZAMORA"
+  #    position = "COORDINADORA DE SERVICIOS ESCOLARES - 2018"
+  #    description = ""
+  #    img = "images/person3.jpg"
+  #    email = "#"
+  #    telephone = "#"
+  #    facebook = "#"
+  #    twitter = "#"
+  #    dribbble = "#"
+  #    instagram = "#"
+  #    github = "#"
+  #    whatsapp = "#"
+
+# Contact section
+[params.contact]
+  enable = true
+  title = "Nuestro contacto"
+  message = "Descripcion del contacto<br>y datos vitales"
+  name_placeholder = "Tu nombre"
+  email_placeholder = "Tu email"
+  email_disclaimer = "Nunca compartimos tus datos."
+  message_placeholder = "Envianos un mensaje"
+  button_text = "Enviar"
+
+# Footer section
+# Note here that the copyright and attribution statement must remain as part of the license agreement. If you wish to remove this, please contact freehtml5 and pay for a professional license.
+[params.footer]
+  enable = true
+  note = ""
+  # github = "#"
+  twitter = "#"
+  facebook = "#"
+  vine = "#"
+  linkedin = "#"
+  instagram = "#"
+  
+[params.faq]
+  [[params.faq.tema]]
+    tema = "Oficialidad"
+    [[params.faq.tema.pregunta]]
+    pregunta = "¿Cuánto dura la carrera?"
+    respuesta = ""
+    collapse = "One"
+    show = "true"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Qué significa modalidad mixta?"
+      respuesta = ""
+      collapse = "Two"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Qué dia y a que hora tengo que venir?"
+      respuesta = ""
+      collapse = "Three"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Cómo son las clases virtuales?"
+      respuesta = ""
+      collapse = "Four"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Quiénes son los maestros?"
+      respuesta = ""
+      collapse = "Five"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Hay intercambios?"
+      respuesta = ""
+      collapse = "Six"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Hay becas?, ¿En qué consisten?"
+      respuesta = ""
+      collapse = "Seven"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Cual es la foram de evaluar?"
+      respuesta = ""
+      collapse = "Eight"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Qué formas de titulacion hay?"
+      respuesta = ""
+      collapse = "Nine"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿En qué consisten los diplomados?"
+      respuesta = ""
+      collapse = "Ten"
+  [[params.faq.tema]]
+    tema = "Titulaciones"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Cuál es el costo de inscripción y de colegiatura?"
+      respuesta = ""
+      collapse = "Eleven"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Cuáles son las formas de pago?"
+      respuesta = ""
+      collapse = "Twelve"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿En cuánto tiempo puedo realizar mi carrera?"
+      respuesta = ""
+      collapse = "Thirteen"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Puedo estudiar dos carreras al mismo tiempo?"
+      respuesta = ""
+      collapse = "Fourteen"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Cuáles son los horarios?"
+      respuesta = ""
+      collapse = "Fifthteen"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Hay flexibilidad de horario?"
+      respuesta = ""
+      collapse = "Sixteen"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Que tan flexible es la carrera, para hacerla en mas o menor tiempo?"
+      respuesta = ""
+      collapse = "Seventeen"
+    [[params.faq.tema.pregunta]]
+      pregunta = "Cuando termine la carrera, ¿salgo titulado?"
+      respuesta = ""
+      collapse = "Eighteen"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿En que tiempo me titulo después de terminar la carrera?"
+      respuesta = ""
+      collapse = "Nineteen"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Cuentan con alguna certificación?"
+      respuesta = ""
+      collapse = "Twenty"
+  [[params.faq.tema]]
+    tema = "Titulaciones"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Sus programas están incorporados a la SEP?"
+      respuesta = ""
+      collapse = "TwntyOne"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Se pueden consultar los planes de estudio o lista de materias por internet?"
+      respuesta = ""
+      collapse = "TwentyTwo"
+    [[params.faq.tema.pregunta]]
+      pregunta = "Obtuve el certificado de bachillerato por medio del examen del Ceneval, Acuerdo 286, ¿puedo ingresar al CISDE con este certificado?"
+      respuesta = ""
+      collapse = "TwentyThree"
+    [[params.faq.tema.pregunta]]
+      pregunta = "Estudié en otra universidad, ¿puedo revalidar materias al ingresar a una carrera en el CISDE?"
+      respuesta = ""
+      collapse = "TwentyFour"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿El CISDE imparte cursos de preparación para el examen de admisión?"
+      respuesta = ""
+      collapse = "TwentyFive"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Existe bolsa de trabajo?"
+      respuesta = ""
+      collapse = "TwentySix"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿El CISDE es una institución educativa reconocida por las autoridades académicas mexicanas?"
+      respuesta = ""
+      collapse = "TwentySeven"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Que es el RVOE?"
+      respuesta = ""
+      collapse = "TwentyEight"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Quién otorga el reconocimiento de validez oficial de estudios?"
+      respuesta = "TwentyNine"
+      collapse = "Eleven"
+    [[params.faq.tema.pregunta]]
+      pregunta = "¿Còmo puedo comprobar que los títulos del CISDE están reconocidos por la SEP?"
+      respuesta = ""
+      collapse = "Thirty"

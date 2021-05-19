@@ -1,0 +1,65 @@
+<div id="fh5co-gallery">
+  {{ range .Site.Params.work.item }}
+  <a href="{{ .img | absURL }}" class="fh5co-item image-popup" style="background-image: url({{ .img | absURL }})">
+    <div class="fh5co-overlay"></div>
+    <div class="fh5co-copy">
+      <div class="fh5co-copy-inner">
+        <h2>{{ .title | markdownify }}</h2>
+        {{ if isset . "subtitle" }}
+        <h3>{{ .subtitle | markdownify }}</h3>
+        {{ end }}
+      </div>
+    </div>
+  </a>
+  {{ end }}
+</div> <!-- END fh5co-gallery -->
+<!-- <div class="container-grid">
+  {{ $Path := "/static/images/gallery/" }}
+  {{ $files := readDir $Path }}
+  {{ range $files }}
+  <div class="grid-item"><img src="/images/gallery/{{ .Name }}" /></div>
+  {{ end }}
+</div> -->
+
+<style>
+  .container-grid {
+    display: grid;
+    grid-gap: 5px;
+    margin-top: 60rem;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-auto-rows: 75px;
+    grid-auto-flow: dense;
+  }
+
+  .horizontal {
+    grid-column: auto / span 2;
+  }
+
+  .vertical {
+    grid-row: span 2;
+
+  }
+
+  .big {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .grid-item img{
+  }
+</style>
+
+<script>
+  $(document).ready(function () {
+    let allItems = document.querySelectorAll('.grid-item');
+    allItems.forEach(function (item) {
+      let wid = item.firstChild.width;
+      let hei = item.firstChild.height;
+      
+      if(wid > hei){
+        item.classList += ' horizontal';
+      }else{
+        item.classList += ' vertical';
+      }
+    });
+  });
+</script>

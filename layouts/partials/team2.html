@@ -1,0 +1,56 @@
+<div id="fh5co-team" data-section="team">
+	<div class="container">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					{{ with .Site.Params.team }}
+					<div class="col-sm-8">
+						<h2>{{ .title }}</h2>
+					</div>
+					{{ end }}
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Nombre</th>
+						<th>Posicion</th>
+						<th>Telefono</th>
+						<th>Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{ with .Site.Params.team }}
+
+					{{ range .item }}
+
+
+					<tr>
+						<td><img src="{{ .img }}" alt="" style="height: 6rem"></td>
+						<td>{{ .name }}</td>
+						<td>{{ .position }}</td>
+						<td>{{ .telephone }}</td>
+						<td>
+							<a href="#"><i class="fas fa-phone"></i></a>
+							<a href="#"><i class="fas fa-envelope-open"></i></a>
+							<a href="#"><i class="fas fa-info-circle"></i></a>
+						</td>
+					</tr>
+
+					{{ end }}
+					{{ end }}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div> <!-- END fh5co-team -->
+
+<style>
+	.table-bordered{
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+	}
+</style>

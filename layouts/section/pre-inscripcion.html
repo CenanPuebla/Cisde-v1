@@ -1,0 +1,752 @@
+<link rel="stylesheet" href="/css/estilosPreinscripcion.css">
+<link rel="stylesheet" href="/css/site.min.css">
+
+{{ partial "header.html" . }}
+
+{{ partial "nav.html" . }}
+
+<div id="root">
+    <div class="hidden" id="overlay">
+        <div id="cargando-datos" style="left:48%; top:45%; z-index: 999; position: absolute;">
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <br><br><span>Guardando...</span>
+        </div>
+    </div>
+    <div class="content-block">
+        <div class="container">
+            <div class="row">
+
+                <div class="col col-odd">
+                    <form accept-charset="UTF-8" class="form-vertical clearfix" id="formPreinscripcion" method="post"
+                        onsubmit="return validar()">
+                        <div class="col-block no-space-on-top" id="formulario">
+                            <h3 class="title-description no-margins">Información personal:</h3>
+                            <div class="divider divider-type2"></div>
+
+                            <div class="clearfix">
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Nombre:</label>
+                                    <input class="form-control formPreInsc" id="nombre" maxlength="30" name="nombre"
+                                        type="text" field_signature="2476332125">
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Apellido paterno:</label>
+                                    <input class="form-control formPreInsc" id="aPaterno" maxlength="30" name="aPaterno"
+                                        type="text" field_signature="1470620013">
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Apellido materno:</label>
+                                    <input class="form-control formPreInsc" id="aMaterno" maxlength="30" name="aMaterno"
+                                        type="text" field_signature="2207837617">
+                                </div>
+
+
+                                <div class="col-xs col-xs-large">
+                                    <label>
+                                        <span class="required">*</span>
+                                        Fecha de nacimiento: (día - mes - año)
+                                    </label><br>
+
+                                    <div class="clearfix">
+                                        <div class="birthday-control">
+                                            <input class="form-control formPreInsc hasDatepicker" id="datepicker"
+                                                name="FechaNac" type="text" field_signature="2142797608">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Sexo:</label>
+                                    <select class="form-control selectOn" id="sexo" name="sexo"
+                                        field_signature="1375212116">
+                                        <option value="0">--Seleccionar--</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Masculino">Masculino</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Estado civil:</label>
+                                    <select class="form-control selectOn" id="estado_civil" name="edocivil"
+                                        field_signature="2278607588">
+                                        <option value="0">--Seleccionar--</option>
+                                        <option value="Soltero">Soltero(a)</option>
+                                        <option value="Casado">Casado(a)</option>
+                                        <option value="Divorciado">Divorciado(a)</option>
+                                        <option value="Viudo">Viudo(a)</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>País:</label>
+                                    <select class="hidden" id="pais_input" name="paisInput"
+                                        field_signature="3309286029">
+                                        <option selected="true" value="pais">-pais-</option>
+                                    </select>
+                                    <select class="form-control country-selector-list selectOn" id="pais" name="pais"
+                                        field_signature="2666167645">
+                                        <option value="">--Seleccionar--</option>
+                                        <option value="1" class=""> AFGANISTAN</option>
+                                        <option value="2" class=""> AKROTIRI</option>
+                                        <option value="3" class=""> ALBANIA</option>
+                                        <option value="4" class=""> ALEMANIA</option>
+                                        <option value="5" class=""> ANDORRA</option>
+                                        <option value="6" class=""> ANGOLA</option>
+                                        <option value="7" class=""> ANGUILA</option>
+                                        <option value="8" class=""> ANTARTIDA</option>
+                                        <option value="9" class=""> ANTIGUA Y BARBUDA</option>
+                                        <option value="10" class=""> ANTILLAS NEERLANDESAS</option>
+                                        <option value="11" class=""> ARABIA SAUDI</option>
+                                        <option value="12" class=""> ARCTIC OCEAN</option>
+                                        <option value="13" class=""> ARGELIA</option>
+                                        <option value="14" class=""> ARGENTINA</option>
+                                        <option value="15" class=""> ARMENIA</option>
+                                        <option value="16" class=""> ARUBA</option>
+                                        <option value="17" class=""> ASHMORE AND CARTIER ISLANDS</option>
+                                        <option value="18" class=""> ATLANTIC OCEAN</option>
+                                        <option value="19" class=""> AUSTRALIA</option>
+                                        <option value="20" class=""> AUSTRIA</option>
+                                        <option value="21" class=""> AZERBAIYAN</option>
+                                        <option value="22" class=""> BAHAMAS</option>
+                                        <option value="23" class=""> BAHRAIN</option>
+                                        <option value="24" class=""> BANGLADESH</option>
+                                        <option value="25" class=""> BARBADOS</option>
+                                        <option value="26" class=""> BELGICA</option>
+                                        <option value="27" class=""> BELICE</option>
+                                        <option value="28" class=""> BENIN</option>
+                                        <option value="29" class=""> BERMUDAS</option>
+                                        <option value="30" class=""> BIELORRUSIA</option>
+                                        <option value="31" class=""> BIRMANIA; MYANMAR</option>
+                                        <option value="32" class=""> BOLIVIA</option>
+                                        <option value="33" class=""> BOSNIA Y HERCEGOVINA</option>
+                                        <option value="34" class=""> BOTSUANA</option>
+                                        <option value="35" class=""> BRASIL</option>
+                                        <option value="36" class=""> BRUNEI</option>
+                                        <option value="37" class=""> BULGARIA</option>
+                                        <option value="38" class=""> BURKINA FASO</option>
+                                        <option value="39" class=""> BURUNDI</option>
+                                        <option value="40" class=""> BUTAN</option>
+                                        <option value="41" class=""> CABO VERDE</option>
+                                        <option value="42" class=""> CAMBOYA</option>
+                                        <option value="43" class=""> CAMERUN</option>
+                                        <option value="44" class=""> CANADA</option>
+                                        <option value="45" class=""> CHAD</option>
+                                        <option value="46" class=""> CHILE</option>
+                                        <option value="47" class=""> CHINA</option>
+                                        <option value="48" class=""> CHIPRE</option>
+                                        <option value="49" class=""> CLIPPERTON ISLAND</option>
+                                        <option value="50" class=""> COLOMBIA</option>
+                                        <option value="51" class=""> COMORAS</option>
+                                        <option value="52" class=""> CONGO</option>
+                                        <option value="53" class=""> CORAL SEA ISLANDS</option>
+                                        <option value="54" class=""> COREA DEL NORTE</option>
+                                        <option value="55" class=""> COREA DEL SUR</option>
+                                        <option value="56" class=""> COSTA DE MARFIL</option>
+                                        <option value="57" class=""> COSTA RICA</option>
+                                        <option value="58" class=""> CROACIA</option>
+                                        <option value="59" class=""> CUBA</option>
+                                        <option value="60" class=""> DHEKELIA</option>
+                                        <option value="61" class=""> DINAMARCA</option>
+                                        <option value="62" class=""> DOMINICA</option>
+                                        <option value="63" class=""> ECUADOR</option>
+                                        <option value="64" class=""> EGIPTO</option>
+                                        <option value="65" class=""> EL SALVADOR</option>
+                                        <option value="66" class=""> EL VATICANO</option>
+                                        <option value="67" class=""> EMIRATOS ARABES UNIDOS</option>
+                                        <option value="68" class=""> ERITREA</option>
+                                        <option value="69" class=""> ESLOVAQUIA</option>
+                                        <option value="70" class=""> ESLOVENIA</option>
+                                        <option value="71" class=""> ESPAÑA</option>
+                                        <option value="72" class=""> ESTADOS UNIDOS</option>
+                                        <option value="73" class=""> ESTONIA</option>
+                                        <option value="74" class=""> ETIOPIA</option>
+                                        <option value="75" class=""> FILIPINAS</option>
+                                        <option value="76" class=""> FINLANDIA</option>
+                                        <option value="77" class=""> FIYI</option>
+                                        <option value="78" class=""> FRANCIA</option>
+                                        <option value="79" class=""> GABON</option>
+                                        <option value="80" class=""> GAMBIA</option>
+                                        <option value="81" class=""> GAZA STRIP</option>
+                                        <option value="82" class=""> GEORGIA</option>
+                                        <option value="83" class=""> GHANA</option>
+                                        <option value="84" class=""> GIBRALTAR</option>
+                                        <option value="85" class=""> GRANADA</option>
+                                        <option value="86" class=""> GRECIA</option>
+                                        <option value="87" class=""> GROENLANDIA</option>
+                                        <option value="88" class=""> GUAM</option>
+                                        <option value="89" class=""> GUATEMALA</option>
+                                        <option value="90" class=""> GUERNSEY</option>
+                                        <option value="91" class=""> GUINEA</option>
+                                        <option value="92" class=""> GUINEA ECUATORIAL</option>
+                                        <option value="93" class=""> GUINEA-BISSAU</option>
+                                        <option value="94" class=""> GUYANA</option>
+                                        <option value="95" class=""> HAITI</option>
+                                        <option value="96" class=""> HONDURAS</option>
+                                        <option value="97" class=""> HONG KONG</option>
+                                        <option value="98" class=""> HUNGRIA</option>
+                                        <option value="99" class=""> INDIA</option>
+                                        <option value="100" class=""> INDIAN OCEAN</option>
+                                        <option value="101" class=""> INDONESIA</option>
+                                        <option value="102" class=""> IRAN</option>
+                                        <option value="103" class=""> IRAQ</option>
+                                        <option value="104" class=""> IRLANDA</option>
+                                        <option value="105" class=""> ISLA BOUVET</option>
+                                        <option value="106" class=""> ISLA CHRISTMAS</option>
+                                        <option value="107" class=""> ISLA NORFOLK</option>
+                                        <option value="108" class=""> ISLANDIA</option>
+                                        <option value="109" class=""> ISLAS CAIMAN</option>
+                                        <option value="110" class=""> ISLAS COCOS</option>
+                                        <option value="111" class=""> ISLAS COOK</option>
+                                        <option value="112" class=""> ISLAS FEROE</option>
+                                        <option value="113" class=""> ISLAS GEORGIA DEL SUR Y SANDWICH DE</option>
+                                        <option value="114" class=""> ISLAS HEARD Y MCDONALD</option>
+                                        <option value="115" class=""> ISLAS MALVINAS</option>
+                                        <option value="116" class=""> ISLAS MARIANAS DEL NORTE</option>
+                                        <option value="117" class=""> ISLAS MARSHALL</option>
+                                        <option value="118" class=""> ISLAS PITCAIRN</option>
+                                        <option value="119" class=""> ISLAS SALOMON</option>
+                                        <option value="120" class=""> ISLAS TURCAS Y CAICOS</option>
+                                        <option value="121" class=""> ISLAS VIRGENES AMERICANAS</option>
+                                        <option value="122" class=""> ISLAS VIRGENES BRITANICAS</option>
+                                        <option value="123" class=""> ISRAEL</option>
+                                        <option value="124" class=""> ITALIA</option>
+                                        <option value="125" class=""> JAMAICA</option>
+                                        <option value="126" class=""> JAN MAYEN</option>
+                                        <option value="127" class=""> JAPON</option>
+                                        <option value="128" class=""> JERSEY</option>
+                                        <option value="129" class=""> JORDANIA</option>
+                                        <option value="130" class=""> KAZAJISTAN</option>
+                                        <option value="131" class=""> KENIA</option>
+                                        <option value="132" class=""> KIRGUIZISTAN</option>
+                                        <option value="133" class=""> KIRIBATI</option>
+                                        <option value="134" class=""> KUWAIT</option>
+                                        <option value="135" class=""> LAOS</option>
+                                        <option value="136" class=""> LESOTO</option>
+                                        <option value="137" class=""> LETONIA</option>
+                                        <option value="138" class=""> LIBANO</option>
+                                        <option value="139" class=""> LIBERIA</option>
+                                        <option value="140" class=""> LIBIA</option>
+                                        <option value="141" class=""> LIECHTENSTEIN</option>
+                                        <option value="142" class=""> LITUANIA</option>
+                                        <option value="143" class=""> LUXEMBURGO</option>
+                                        <option value="144" class=""> MACAO</option>
+                                        <option value="145" class=""> MACEDONIA</option>
+                                        <option value="146" class=""> MADAGASCAR</option>
+                                        <option value="147" class=""> MALASIA</option>
+                                        <option value="148" class=""> MALAUI</option>
+                                        <option value="149" class=""> MALDIVAS</option>
+                                        <option value="150" class=""> MALI</option>
+                                        <option value="151" class=""> MALTA</option>
+                                        <option value="152" class=""> MAN, ISLE OF</option>
+                                        <option value="153" class=""> MARRUECOS</option>
+                                        <option value="154" class=""> MAURICIO</option>
+                                        <option value="155" class=""> MAURITANIA</option>
+                                        <option value="156" class=""> MAYOTTE</option>
+                                        <option value="157" class="" selected="selected"> MEXICO</option>
+                                        <option value="158" class=""> MICRONESIA</option>
+                                        <option value="159" class=""> MOLDAVIA</option>
+                                        <option value="160" class=""> MONACO</option>
+                                        <option value="161" class=""> MONGOLIA</option>
+                                        <option value="162" class=""> MONTENEGRO</option>
+                                        <option value="163" class=""> MONTSERRAT</option>
+                                        <option value="164" class=""> MOZAMBIQUE</option>
+                                        <option value="165" class=""> MUNDO</option>
+                                        <option value="166" class=""> NAMIBIA</option>
+                                        <option value="167" class=""> NAURU</option>
+                                        <option value="168" class=""> NAVASSA ISLAND</option>
+                                        <option value="169" class=""> NEPAL</option>
+                                        <option value="170" class=""> NICARAGUA</option>
+                                        <option value="171" class=""> NIGER</option>
+                                        <option value="172" class=""> NIGERIA</option>
+                                        <option value="173" class=""> NIUE</option>
+                                        <option value="174" class=""> NORUEGA</option>
+                                        <option value="175" class=""> NUEVA CALEDONIA</option>
+                                        <option value="176" class=""> NUEVA ZELANDA</option>
+                                        <option value="177" class=""> OMAN</option>
+                                        <option value="178" class=""> PACIFIC OCEAN</option>
+                                        <option value="179" class=""> PAISES BAJOS</option>
+                                        <option value="180" class=""> PAKISTAN</option>
+                                        <option value="181" class=""> PALAOS</option>
+                                        <option value="182" class=""> PANAMA</option>
+                                        <option value="183" class=""> PAPUA-NUEVA GUINEA</option>
+                                        <option value="184" class=""> PARACEL ISLANDS</option>
+                                        <option value="185" class=""> PARAGUAY</option>
+                                        <option value="186" class=""> PERU</option>
+                                        <option value="187" class=""> POLINESIA FRANCESA</option>
+                                        <option value="188" class=""> POLONIA</option>
+                                        <option value="189" class=""> PORTUGAL</option>
+                                        <option value="190" class=""> PUERTO RICO</option>
+                                        <option value="191" class=""> QATAR</option>
+                                        <option value="192" class=""> REINO UNIDO</option>
+                                        <option value="193" class=""> REPUBLICA CENTROAFRICANA</option>
+                                        <option value="194" class=""> REPUBLICA CHECA</option>
+                                        <option value="195" class=""> REPUBLICA DEMOCRATICA DEL CONGO</option>
+                                        <option value="196" class=""> REPUBLICA DOMINICANA</option>
+                                        <option value="197" class=""> RUANDA</option>
+                                        <option value="198" class=""> RUMANIA</option>
+                                        <option value="199" class=""> RUSIA</option>
+                                        <option value="200" class=""> SAHARA OCCIDENTAL</option>
+                                        <option value="201" class=""> SAMOA</option>
+                                        <option value="202" class=""> SAMOA AMERICANA</option>
+                                        <option value="203" class=""> SAN CRISTOBAL Y NIEVES</option>
+                                        <option value="204" class=""> SAN MARINO</option>
+                                        <option value="205" class=""> SAN PEDRO Y MIQUELON</option>
+                                        <option value="206" class=""> SAN VICENTE Y LAS GRANADINAS</option>
+                                        <option value="207" class=""> SANTA HELENA</option>
+                                        <option value="208" class=""> SANTA LUCIA</option>
+                                        <option value="209" class=""> SANTO TOME Y PRINCIPE</option>
+                                        <option value="210" class=""> SENEGAL</option>
+                                        <option value="211" class=""> SERBIA</option>
+                                        <option value="212" class=""> SEYCHELLES</option>
+                                        <option value="213" class=""> SIERRA LEONA</option>
+                                        <option value="214" class=""> SINGAPUR</option>
+                                        <option value="215" class=""> SIRIA</option>
+                                        <option value="216" class=""> SOMALIA</option>
+                                        <option value="217" class=""> SOUTHERN OCEAN</option>
+                                        <option value="218" class=""> SPRATLY ISLANDS</option>
+                                        <option value="219" class=""> SRI LANKA</option>
+                                        <option value="220" class=""> SUAZILANDIA</option>
+                                        <option value="221" class=""> SUDAFRICA</option>
+                                        <option value="222" class=""> SUDAN</option>
+                                        <option value="223" class=""> SUECIA</option>
+                                        <option value="224" class=""> SUIZA</option>
+                                        <option value="225" class=""> SURINAM</option>
+                                        <option value="226" class=""> SVALBARD Y JAN MAYEN</option>
+                                        <option value="227" class=""> TAILANDIA</option>
+                                        <option value="228" class=""> TAIWAN</option>
+                                        <option value="229" class=""> TANZANIA</option>
+                                        <option value="230" class=""> TAYIKISTAN</option>
+                                        <option value="231" class=""> TERRITORIO BRITANICO DEL OCEANO IND</option>
+                                        <option value="232" class=""> TERRITORIOS AUSTRALES FRANCESES</option>
+                                        <option value="233" class=""> TIMOR ORIENTAL</option>
+                                        <option value="234" class=""> TOGO</option>
+                                        <option value="235" class=""> TOKELAU</option>
+                                        <option value="236" class=""> TONGA</option>
+                                        <option value="237" class=""> TRINIDAD Y TOBAGO</option>
+                                        <option value="238" class=""> TUNEZ</option>
+                                        <option value="239" class=""> TURKMENISTAN</option>
+                                        <option value="240" class=""> TURQUIA</option>
+                                        <option value="241" class=""> TUVALU</option>
+                                        <option value="242" class=""> UCRANIA</option>
+                                        <option value="243" class=""> UGANDA</option>
+                                        <option value="244" class=""> UNION EUROPEA</option>
+                                        <option value="245" class=""> URUGUAY</option>
+                                        <option value="246" class=""> UZBEKISTAN</option>
+                                        <option value="247" class=""> VANUATU</option>
+                                        <option value="248" class=""> VENEZUELA</option>
+                                        <option value="249" class=""> VIETNAM</option>
+                                        <option value="250" class=""> WAKE ISLAND</option>
+                                        <option value="251" class=""> WALLIS Y FUTUNA</option>
+                                        <option value="252" class=""> WEST BANK</option>
+                                        <option value="253" class=""> YEMEN</option>
+                                        <option value="254" class=""> YIBUTI</option>
+                                        <option value="255" class=""> ZAMBIA</option>
+                                        <option value="256" class=""> ZIMBABUE</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Estado:</label>
+                                    <select class="form-control country-selector-list selectOn" id="estado"
+                                        name="estado" field_signature="3264295764">
+                                        <option value="">--Seleccionar--</option>
+                                        <option value="1" class="157"> Aguascalientes</option>
+                                        <option value="2" class="157"> Baja California</option>
+                                        <option value="3" class="157"> Baja California Sur</option>
+                                        <option value="4" class="157"> Campeche</option>
+                                        <option value="9" class="157"> CDMX</option>
+                                        <option value="7" class="157"> Chiapas</option>
+                                        <option value="8" class="157"> Chihuahua</option>
+                                        <option value="5" class="157"> Coahuila</option>
+                                        <option value="6" class="157"> Colima</option>
+                                        <option value="10" class="157"> Durango</option>
+                                        <option value="11" class="157"> Estado de México</option>
+                                        <option value="12" class="157"> Guanajuato</option>
+                                        <option value="13" class="157"> Guerrero</option>
+                                        <option value="14" class="157"> Hidalgo</option>
+                                        <option value="15" class="157"> Jalisco</option>
+                                        <option value="16" class="157"> Michoacán</option>
+                                        <option value="17" class="157"> Morelos</option>
+                                        <option value="18" class="157"> Nayarit</option>
+                                        <option value="19" class="157"> Nuevo León</option>
+                                        <option value="20" class="157"> Oaxaca</option>
+                                        <option value="21" class="157"> Puebla</option>
+                                        <option value="22" class="157"> Querétaro</option>
+                                        <option value="23" class="157"> Quintana Roo</option>
+                                        <option value="24" class="157"> San Luis Potosí</option>
+                                        <option value="25" class="157"> Sinaloa</option>
+                                        <option value="26" class="157"> Sonora</option>
+                                        <option value="27" class="157"> Tabasco</option>
+                                        <option value="28" class="157"> Tamaulipas</option>
+                                        <option value="29" class="157"> Tlaxcala</option>
+                                        <option value="30" class="157"> Veracruz</option>
+                                        <option value="31" class="157"> Yucatán</option>
+                                        <option value="32" class="157"> Zacatecas</option>
+                                    </select>
+                                    <input class="form-control" id="estado_input" maxlength="30" name="estado_input"
+                                        type="hidden">
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Ciudad o Municipio:</label>
+                                    <select class="form-control country-selector-list selectOn" id="municipio"
+                                        name="municipio" field_signature="1482421260" disabled="">
+                                        <option value="">--Seleccionar--</option>
+
+
+                                    </select>
+                                    <input class="form-control" disabled="disabled" id="municipio_input" maxlength="30"
+                                        name="municipio_input" type="hidden" value="No Disponible">
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Tel. fijo:</label>
+                                    <input class="form-control formPreInsc" id="telCasa" maxlength="10" name="telCasa"
+                                        type="text" field_signature="3122710652">
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Tel. móvil:</label>
+                                    <input class="form-control formPreInsc" id="telCelular" maxlength="10"
+                                        name="telCelular" type="text" field_signature="2681422235">
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Correo electrónico:</label>
+                                    <input class="form-control formPreInsc" id="mail" maxlength="50" name="mail"
+                                        type="text" field_signature="1745825857">
+                                </div>
+
+
+                                <div class="col-xs">
+                                    <label><span class="required">*</span>Promedio:</label>
+                                    <div id="average">
+                                        <select class="form-control selectOn" id="average_digit" name="average_digit"
+                                            field_signature="2939736978">
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                        .
+                                        <select class="form-control selectOn" id="average_decimal"
+                                            name="average_decimal" field_signature="148278615">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-block">
+                            <h3 class="title-description no-margins">
+                                Información del área de interés:
+                            </h3>
+
+                            <div class="divider divider-type2"></div>
+
+
+                            <label>
+                                <span class="required">*</span>
+                                Selecciona la modalidad:
+                            </label>
+                            <select class="form-control career-selector-list selectOn" id="modalidad-remote"
+                                name="modalidad" field_signature="4003829200">
+                                <option value="">-- Selecciona una opción --</option>
+                                <option value="a031500000YMu7AAAT" class=""> Presencial</option>
+                                <option value="a031500000YMu7DAAT" class=""> Ejecutiva</option>
+                                <option value="a031500000YMu7CAAT" class=""> Online</option>
+                            </select>
+
+                            <label>
+                                <span class="required">*</span>
+                                Selecciona el nivel que deseas estudiar:
+                            </label>
+                            <select class="form-control career-selector-list selectOn" id="nivel-remote" name="nivel"
+                                field_signature="1661524847" disabled="">
+                                <option value="">-- Selecciona una opción --</option>
+
+
+
+
+
+
+
+                            </select>
+
+                            <label>
+                                <span class="required">*</span>
+                                Selecciona el Campus IEU donde quieres estudiar:
+                            </label>
+                            <select class="form-control career-selector-list selectOn" id="plantel-remote"
+                                name="plantel" field_signature="1965984024" disabled="">
+                                <option value="">-- Selecciona una opción --</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </select>
+
+                            <label>
+                                <span class="required">*</span>
+                                Seleccionar carrera:
+                            </label>
+                            <select class="form-control career-selector-list selectOn" id="programa-remote" name="ofe"
+                                field_signature="3599665040" disabled="">
+                                <option value="">-- Selecciona una opción --</option>
+
+
+
+                            </select>
+
+                            <label>
+                                <span class="required">*</span>
+                                Medio por el cual te enteraste:
+                            </label>
+                            <select class="form-control career-selector-list selectOn" id="medio" name="medio"
+                                field_signature="1082368790">
+                                <option value="0">-- Selecciona una opción --</option>
+                                <option value="Atención inmediata">Atención inmediata</option>
+                                <option value="Cine">Cine</option>
+                                <option value="Correo electrónico">Correo electrónico</option>
+                                <option value="Espectacular">Espectacular</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Fachada de Campus">Fachada de Campus</option>
+                                <option value="Ferias y eventos">Ferias y eventos</option>
+                                <option value="Google">Google</option>
+                                <option value="Mensaje en el celular">Mensaje en el celular</option>
+                                <option value="Parada de autobús">Parada de autobús</option>
+                                <option value="Pendones">Pendones</option>
+                                <option value="Periódico">Periódico</option>
+                                <option value="Publicidad en camiones">Publicidad en camiones</option>
+                                <option value="Radio">Radio</option>
+                                <option value="Recibí una visita">Recibí una visita</option>
+                                <option value="Revista">Revista</option>
+                                <option value="Stand en Plaza">Stand en Plaza</option>
+                                <option value="Televisión">Televisión</option>
+                                <option value="Vehículos con sonido">Vehículos con sonido</option>
+                            </select>
+                        </div>
+                        <div class="row row-without-spaces" id="divBotonEnviar">
+                            <div class="xcol xcol-4">
+                                <button class="btn btn-type-2" id="botonEnviar" onclick="save()" type="button">Enviar mi
+                                    preinscripción</button>
+                            </div>
+                            <div class="xcol xcol-2">
+                                <a class="btn btn-type-2"
+                                    href="http://ieu.edu.mx/admisiones/preinscripcion">Regresar</a>
+                            </div>
+                            <br>
+                            <span class="required">*</span> Todos los campos marcados con asterisco son obligatorios.
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col col-even">
+                    <div class="col-block text-center space-on-the-sides">
+                        <p><i class="sprite sprite-circle-phone-contact"></i></p>
+                        <p class="text-medium">
+                            <strong>
+                                ¿Quieres aclarar alguna duda o tener más información?<br>
+                                Solicita atención inmediata.
+                            </strong>
+                        </p>
+                        <p> <a class="btn btn-type-2 btn-multiline" data-phone-contact="#"
+                                href="http://ieu.edu.mx/contacto">Atención Telefónica <span>Inmediata</span></a> </p>
+                    </div>
+
+                    <div class="divider divider-type2"></div>
+
+                    <div class="col-block text-center space-on-the-sides">
+                        <p><i class="sprite sprite-circle-chat"></i></p>
+                        <p class="text-medium"> <strong>Chatea con nosotros y sigue en contacto.</strong> </p>
+                        <p> <a class="btn btn-type-2" data-open-chat="#" href="javascript:;">Chat Online</a> </p>
+                    </div>
+
+                    <div class="divider divider-type2"></div>
+
+                    <div class="col-block text-center space-on-the-sides">
+                        <p><i class="sprite sprite-circle-phone"></i></p>
+                        <p class="text-medium"><strong>Si deseas más información y atención personalizada marca
+                                al:</strong></p>
+                        <p class="title-description">01 800 00 00 438</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <footer id="footer">
+        <div class="content-block">
+            <div class="container">
+                <a class="mobile-hide" href="http://ieu.edu.mx/" id="footer-logo">
+                    <img alt="IEU | Universidad"
+                        src="/resource/1528553524000/PreinscripcionStyleIEU/PreinscripcionStyleIEU/ieu-logo-footer.png">
+                </a>
+                <div id="footer-top">
+                    <div id="footer-social-networks">
+                        <span class="mobile-hide" id="footer-social-networks-title">Síguenos:</span>
+                        <ul>
+                            <li><a class="sprite sprite-footer-facebook"
+                                    href="https://www.facebook.com/pages/IEU-Instituto-de-Estudios-Universitarios/186246394744618"
+                                    target="_blank">Facebook</a></li>
+                            <li><a class="sprite sprite-footer-twitter" href="https://twitter.com/IEU_Universidad"
+                                    target="_blank">Twitter</a> </li>
+                            <li><a class="sprite sprite-footer-foursquare"
+                                    href="https://es.foursquare.com/ieu_universidad" target="_blank">Foursquare</a></li>
+                            <li><a class="sprite sprite-footer-youtube" href="https://www.youtube.com/IEUuniversidad"
+                                    target="_blank">YouTube</a> </li>
+                        </ul>
+                    </div>
+                    <div id="footer-phone-wrapper">
+                        <i class="sprite sprite-footer-phone"></i>
+                        <div id="footer-phone-text">
+                            <div id="footer-phone-lada">LADA SIN COSTO</div>
+                            <div id="footer-phone-number">01 800 00 00 438</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-hide" id="footer-body">
+                    <div class="footer-links-list"> <strong class="footer-links-list-title">QUIÉNES SOMOS</strong>
+                        <nav>
+                            <ul>
+                                <li><a href="http://ieu.edu.mx/conocenos">Conócenos</a></li>
+                                <li><a href="http://ieu.edu.mx/acreditaciones">Validez oficial y acreditaciones</a></li>
+                                <li><a href="http://ieu.edu.mx/conocenos#opiniones">Opiniones</a></li>
+                                <li><a href="http://ieu.edu.mx/conocenos#cuerpo-academico">Cuerpo académico</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-links-list"> <strong class="footer-links-list-title">MODALIDADES
+                            EDUCATIVAS</strong>
+                        <nav>
+                            <ul>
+                                <li> <a href="http://ieu.edu.mx/modalidades/presencial">Presencial</a> </li>
+                                <li> <a href="http://ieu.edu.mx/modalidades/online">Online</a> </li>
+                                <li> <a href="http://ieu.edu.mx/modalidades/ejecutiva">Ejecutiva</a> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-links-list"> <strong class="footer-links-list-title">OFERTA ACADÉMICA</strong>
+                        <nav>
+                            <ul>
+                                <li> <a href="http://ieu.edu.mx/oferta-academica/bachillerato">Bachillerato</a> </li>
+                                <li> <a href="http://ieu.edu.mx/oferta-academica/licenciaturas">Licenciaturas</a> </li>
+                                <li> <a href="http://ieu.edu.mx/oferta-academica/maestrias">Maestrías</a> </li>
+                                <li> <a href="http://ieu.edu.mx/oferta-academica/especialidades">Especialidades</a>
+                                </li>
+                                <li> <a href="http://ieu.edu.mx/oferta-academica/doctorados">Doctorados</a> </li>
+                                <li> <a href="http://ieu.edu.mx/oferta-academica/educacion-continua">Educación
+                                        continua</a> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-links-list"> <strong class="footer-links-list-title">ADMISIONES</strong>
+                        <nav>
+                            <ul>
+                                <li><a href="http://ieu.edu.mx/admisiones/preinscripcion">Proceso de admisión</a></li>
+                                <li><a href="http://ieu.edu.mx/admisiones/preinscripcion#requisitos">Requisitos</a></li>
+                                <li><a href="http://ieu.edu.mx/calculador-de-mensualidades">Colegiatura</a></li>
+                                <li><a href="http://ieu.edu.mx/admisiones/becas-y-apoyos">Becas y apoyos económicos</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <i class="sprite sprite-footer-logo-mobile mobile-show"></i>
+            </div>
+        </div>
+        <div id="footer-footer">
+            <div class="content-block">
+                <div class="container">
+                    <div id="footer-footer-copyright"> Copyright © 2016 Instituto de Estudios Universitarios </div>
+                    <div class="mobile-hide" id="footer-footer-links">
+                        <nav>
+                            <ul>
+                                <li><a href="http://espacio.ieu.edu.mx/" rel="nofollow" target="_blank">NOTICIAS</a>
+                                </li>
+                                <li><a href="http://ieu.edu.mx/publicidad">PUBLICIDAD</a></li>
+                                <li><a href="http://ieu.edu.mx/aviso-de-privacidad">AVISO DE PRIVACIDAD</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    <a href="http://ieu.edu.mx/contacto" id="contact-footer-button"></a>
+
+    <script id="alert-message-message" type="text/x-handlebars-template">
+        <div class="alert-message alert-message-message">
+        <div class="alert-message-header">
+            <a id="cerrarAlert" href="#" class="sprite sprite-btn-alert-close" data-close-alert></a>
+        </div>
+        <div class="alert-message-body">Texto swui</div>
+        <div class="alert-message-footer">
+            <a id="aceptarAlert" class="btn btn-type-1" href="#"  data-close-alert>Aceptar</a>
+        </div>
+    </div>                        
+    </script>
+    <script id="phone-contact-alert-body" type="text/x-handlebars-template">
+        <div class="title-description">¡Gracias!</div>
+    <p class="alert-message-featured">Nombre aqui</p>
+    <strong>En un momento un asesor llamará al número:</strong>
+    <p class="alert-message-featured">Telefono aqui</p>
+    <strong>Nuestro horario de atención es de:</strong>
+    <br/>Lunes a sábado de 7:30 a 21:00 horas
+    </script>
+
+    <script>
+        var ON_MOBILE = false;
+        var ON_TABLET = false;
+        var ON_HANDHELD = false;
+        var ON_DESKTOP = true;
+        var CURRENT_URI = "/Preinscripcion";
+    </script>
+    <script>
+        AverageSelector.init();
+    </script>
+    <script>
+        CountrySelector.init(157);
+        CareerSelector.init();
+        PreRegistration.init();
+    </script>
+
+</div>
